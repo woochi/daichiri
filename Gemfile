@@ -38,6 +38,7 @@ group :development do
   gem 'foreman', '~> 0.82.0'
   gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-rvm'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -50,3 +51,5 @@ gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resour
 
 # Search
 gem 'pg_search'
+
+gem 'therubyracer'
