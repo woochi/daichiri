@@ -32,6 +32,8 @@ server "35.157.161.54", user: "deploy", roles: %w{app db web}
 # Feel free to add new variables to customise your setup.
 set :rvm_type, :user
 
+append :linked_dirs, "tmp/pids", "tmp/sockets", "log"
+
 
 # Custom SSH Options
 # ==================

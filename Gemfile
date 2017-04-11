@@ -53,3 +53,5 @@ gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resour
 gem 'pg_search'
 
 gem 'therubyracer'
+
+gem 'capistrano3-puma', github: "seuros/capistrano-puma"
