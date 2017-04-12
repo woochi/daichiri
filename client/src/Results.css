@@ -1,0 +1,10 @@
+.Result {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.Divider {
+  background: #36393E;
+  height: 1px;
+  margin: 0 20px;
+}

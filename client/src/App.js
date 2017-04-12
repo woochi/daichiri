@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Search from './Search';
+import Results from './Results';
+import Article from './Article';
+import AppBar from './AppBar';
 
 class App extends Component {
-  componentDidMount() {
-    fetch('/api/articles?q=test').then(response => response.json()).then(data => console.log(data));
-  }
-
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <div className="App-content">
+                <Search/>
+              </div>
+            </Route>
+            <Route>
+              <div>
+                <div className="App-header">
+                  <AppBar/>
+                </div>
+                <div className="App-content">
+                  <Switch>
+                    <Route path="/search/:search" component={Results}/>
+                    <Route path="/articles/:article" component={Article}/>
+                  </Switch>
+                </div>
+              </div>
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
