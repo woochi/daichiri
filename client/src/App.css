@@ -45,6 +45,9 @@ input[type="text"] {
   font: 16px/20px 'Roboto Mono', monospace;
   color: #FFF;
   border-radius: 0;
+  background: #3F4248;
+  outline: none;
+  border: 1px solid #6E737D;
 }
 
 a {
@@ -54,4 +57,12 @@ a {
 
 a:hover, a:active {
   color: #EEE;
+}
+
+.TextGreen {
+  color: #3EA692;
+}
+
+.TextRed {
+  color: #D93B47;
 }

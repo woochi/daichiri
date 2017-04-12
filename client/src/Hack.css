@@ -1,0 +1,27 @@
+.Puzzle {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.Cell {
+  cursor: pointer;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+}
+
+.Cell:hover {
+  background-color: #6E737D;
+}
+
+.Cell-solved {
+  background-color: #2B7365 !important;
+}
+
+.Cell:nth-child(3n + 1) {
+  margin-left: 6px;
+}
+
+.Row:nth-child(3n + 1) .Cell {
+  margin-top: 6px;
+}

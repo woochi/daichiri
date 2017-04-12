@@ -5,6 +5,8 @@ import Search from './Search';
 import Results from './Results';
 import Article from './Article';
 import AppBar from './AppBar';
+import Hack from './Hack';
+import Center from './Center';
 
 class App extends Component {
   render() {
@@ -15,6 +17,11 @@ class App extends Component {
             <Route exact path="/">
               <div className="App-content">
                 <Search/>
+              </div>
+            </Route>
+            <Route exact path="/hack">
+              <div className="App-content">
+                <Center><Hack/></Center>
               </div>
             </Route>
             <Route>
