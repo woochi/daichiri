@@ -1,12 +1,12 @@
 .Center {
-  display: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
 
 .Center-content {
-  display: table-cell;
-  vertical-align: middle;
   text-align: center;
   width: 80%;
   max-width: 800px;
