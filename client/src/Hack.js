@@ -67,10 +67,10 @@ class Puzzle extends React.PureComponent {
     const {value} = this.props;
     const rows = [];
 
-    for (let row = 9 - 1; row >= 0; row--) {
+    for (let row = 0; row < 9; row++) {
       const rowCells = [];
 
-      for (let col = 9 - 1; col >= 0; col--) {
+      for (let col = 0; col < 9; col++) {
         const cellIndex = row * 9 + col;
 
         rowCells.push(
@@ -140,12 +140,12 @@ class Hack extends React.PureComponent {
     }
   }
 
-  onChangePuzzle = (puzzle) => {
-    if (isComplete(this.props.puzzle, solution)) {
-      this.setState({puzzle, completed: true})
+  onChangePuzzle = (newPuzzle) => {
+    if (isComplete(newPuzzle, solution)) {
+      this.setState({puzzle: newPuzzle, completed: true})
     }
 
-    this.setState({puzzle});
+    this.setState({puzzle: newPuzzle});
   }
 }
 

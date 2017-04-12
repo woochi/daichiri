@@ -5,7 +5,6 @@ import './SearchInput.css';
 
 class SearchInput extends React.PureComponent {
   render() {
-    console.log(this.props.value);
     const {onSearch, onChange, ...otherProps} = this.props;
 
     return (
