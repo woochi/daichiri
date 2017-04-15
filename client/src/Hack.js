@@ -27,7 +27,7 @@ class Cell extends React.PureComponent {
 
   render() {
     const {index, onChange, value, solution, ...otherProps} = this.props;
-    const solved = value === solution;
+    const solved = value == solution;
     const className = classnames('Cell', {
       'Cell-solved': solved
     });
@@ -41,21 +41,14 @@ class Cell extends React.PureComponent {
         pattern="\d"
         className={className}
         onFocus={this.onFocus}
-        onKeyPress={this.onChange}/>
+        onChange={this.onChange}/>
     );
   }
 
   onFocus = event => event.target.select()
 
   onChange = event => {
-    event.preventDefault();
-
-    const {key} = event;
-    const value = parseInt(key, 10);
-
-    if (isNaN(value) || value === 0) {
-      return;
-    }
+    const {target: {value}} = event;
 
     this.props.onChange(value, this.props.index);
     this.onFocus(event);
@@ -99,7 +92,7 @@ class Puzzle extends React.PureComponent {
 
 function isComplete(puzzle, solution) {
   for (let i = puzzle.length - 1; i >= 0; i--) {
-    if (puzzle[i] !== solution[i]) {
+    if (puzzle[i] != solution[i]) {
       return false;
     }
   }
