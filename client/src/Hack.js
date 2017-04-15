@@ -107,6 +107,23 @@ function isComplete(puzzle, solution) {
   return true;
 }
 
+function shuffleString(string) {
+    let a = string.split('');
+    let n = a.length;
+
+    for (var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    return a.join('');
+}
+
+function generateCode() {
+  return Math.random().toString(36).substring(7).slice(0, 5).toUpperCase() + 'DQAF';
+}
+
 class Hack extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -122,11 +139,11 @@ class Hack extends React.PureComponent {
       return (
         <div>
           <Paragraph>
-            <TypeWriter typing={1}>
+            <TypeWriter typing={1} maxDelay={50}>
               Access granted. Signing in to private.daichiri.com . . . <br/>
               Scanning databases . . . Connected to secure cache . . .<br/>
               Scanning for authentication credentials . . . Found 1 item(s) . . . <br/><br/>
-              <span className="TextGreen">X1082C</span><br/><br/>
+              <span className="TextGreen">{shuffleString(generateCode())}</span><br/><br/>
               Security protocol bot connection detected. Forcing disconnect NOW!<br/><br/>
               <span className="TextRed">CONNECTION CLOSED</span>
             </TypeWriter>
